@@ -30,10 +30,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-signify'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'airblade/vim-rooter'
 Plug 'projekt0n/github-nvim-theme'
 call plug#end()
 
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope git_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -46,6 +47,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 let g:github_function_style = "italic"
 let g:github_sidebars = ["qf", "vista_kind", "terminal", "packer"]
+let g:rooter_patterns = [".git", "Makefile", "Gemfile"]
 
 " Change the "hint" color to the "orange" color, and make the "error" color bright red
 let g:github_colors = {
@@ -59,4 +61,3 @@ colorscheme github_dark
 
 lua << END
 require('lualine').setup()
-END
